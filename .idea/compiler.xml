@@ -9,6 +9,7 @@
         <module name="Factory" />
         <module name="Reflact" />
         <module name="Facade" />
+        <module name="Annotation" />
       </profile>
     </annotationProcessing>
   </component>

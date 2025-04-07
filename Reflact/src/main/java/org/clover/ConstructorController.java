@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 
 public class ConstructorController{
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
-        Class clazz = Class.forName("org.clover.ReflectTarget");
+        Class<?> clazz = Class.forName("org.clover.ReflectTarget");
         Constructor[] conArray;
         Constructor con;
         System.out.println("获取所有的构造函数");

@@ -1,6 +1,6 @@
 package org.clover;
 
-public class ReflectTarget {
+public class ReflectTarget extends ReflectTargetOrigin {
     //--------构造函数--------
     //默认的(包可见)有参构造函数
     ReflectTarget(String str){
@@ -17,6 +17,38 @@ public class ReflectTarget {
     private ReflectTarget(int j){
         System.out.println("序号 " + j);
     }
+    //------字段------
+
+    public String name;
+    protected int index;
+    char type;
+    private String targetInfo;
+
+    @Override
+    public String toString() {
+        return "ReflectTarget{" +
+                "name='" + name + '\'' +
+                ", index=" + index +
+                ", type=" + type +
+                ", targetInfo='" + targetInfo + '\'' +
+                '}';
+    }
+    //------成员方法------
+    public void show1(int i){
+        System.out.println("调用了公有方法序号"+i);
+    }
+    protected void show2(){
+        System.out.println("调用了受保护方法");
+    }
+    void show3(){
+        System.out.println("调用了默认无参方法");
+    }
+
+    private int show4(int index){
+        System.out.println("调用了私有有参方法index " + index);
+        return index;
+    }
+
     public static void main(String[] args) throws ClassNotFoundException {
         //第一种方式获取(类的实例化)
         ReflectTarget reflectTarget = new ReflectTarget();
